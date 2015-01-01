@@ -3,66 +3,42 @@
 //  KKMethodCallLoggerPlugin
 //
 //  Created by Karol Kozub on 2014-12-28.
-//    Copyright (c) 2014 Karol Kozub. All rights reserved.
+//  Copyright (c) 2014 Karol Kozub. All rights reserved.
 //
 
 #import "KKMethodCallLoggerPlugin.h"
+#import "KKLLDBCommandInjector.h"
+#import "KKXcodeRuntime.h"
 
-static KKMethodCallLoggerPlugin *sharedPlugin;
-
-@interface KKMethodCallLoggerPlugin()
-
-@property (nonatomic, strong, readwrite) NSBundle *bundle;
-@end
 
 @implementation KKMethodCallLoggerPlugin
 
-+ (void)pluginDidLoad:(NSBundle *)plugin
++ (void)pluginDidLoad:(NSBundle *)bundle
 {
-    static dispatch_once_t onceToken;
-    NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
-    if ([currentApplicationName isEqual:@"Xcode"]) {
-        dispatch_once(&onceToken, ^{
-            sharedPlugin = [[self alloc] initWithBundle:plugin];
-        });
-    }
+  NSString *dylibPath = [bundle pathForResource:@"libKKMethodCallLogger" ofType:@"dylib"];
+
+  if (dylibPath == nil) {
+    NSLog(@"KKMethodCallLoggerPlugin failed to load. libKKMethodCallLogger.dylib is missing from the bundle.");
+    return;
+  }
+
+  if (![self xcodeRuntimeSupportsRequiredMethods]) {
+    NSLog(@"KKMethodCallLoggerPlugin failed to load. Xcode runtime doesn't support its required methods.");
+    return;
+  }
+
+  [[KKLLDBCommandInjector sharedInstance] setDylibPath:dylibPath];
+  [[KKLLDBCommandInjector sharedInstance] start];
 }
 
-+ (instancetype)sharedPlugin
++ (BOOL)xcodeRuntimeSupportsRequiredMethods
 {
-    return sharedPlugin;
-}
-
-- (id)initWithBundle:(NSBundle *)plugin
-{
-    if (self = [super init]) {
-        // reference to plugin's bundle, for resource access
-        self.bundle = plugin;
-        
-        // Create menu items, initialize UI, etc.
-
-        // Sample Menu Item:
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
-        }
-    }
-    return self;
-}
-
-// Sample Action, for menu item:
-- (void)doMenuAction
-{
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Hello, World" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
-    [alert runModal];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+  return [NSClassFromString(@"DBGLLDBLauncher") instancesRespondToSelector:@selector(_executeLLDBCommands:)] &&
+         [NSClassFromString(@"DBGProcess")      instancesRespondToSelector:@selector(isPaused)]              &&
+         [NSClassFromString(@"DBGLLDBSession")  instancesRespondToSelector:@selector(pauseRequested)]        &&
+         [NSClassFromString(@"DBGLLDBSession")  instancesRespondToSelector:@selector(setPauseRequested:)]    &&
+         [NSClassFromString(@"DBGLLDBSession")  instancesRespondToSelector:@selector(launcher)]              &&
+         [NSClassFromString(@"DBGLLDBSession")  instancesRespondToSelector:@selector(process)];
 }
 
 @end

@@ -11,7 +11,31 @@
 		F9D1AA531A50A178005293DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA521A50A178005293DE /* Foundation.framework */; };
 		F9D1AA581A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = F9D1AA571A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme */; };
 		F9D1AA5B1A50A178005293DE /* KKMethodCallLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA5A1A50A178005293DE /* KKMethodCallLoggerPlugin.m */; };
+		F9D1AA6B1A50A2A8005293DE /* KKMethodCallLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D1AA6A1A50A2A8005293DE /* KKMethodCallLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9D1AA6D1A50A2A8005293DE /* KKMethodCallLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F9D1AA731A50A2A8005293DE /* libKKMethodCallLogger.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */; };
+		F9D1AA801A50A331005293DE /* KKMethodCallLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA7F1A50A331005293DE /* KKMethodCallLoggerTests.m */; };
+		F9D1AA851A50D17B005293DE /* libKKMethodCallLogger.dylib in Resources */ = {isa = PBXBuildFile; fileRef = F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */; };
+		F9DF0E4E1A53B6E9006FC617 /* KKLLDBCommandInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF0E4D1A53B6E9006FC617 /* KKLLDBCommandInjector.m */; };
+		F9DF0E551A53C970006FC617 /* KKSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF0E541A53C970006FC617 /* KKSwizzler.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9D1AA741A50A2A8005293DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9D1AA451A50A178005293DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9D1AA671A50A2A8005293DE;
+			remoteInfo = KKMethodCallLogger;
+		};
+		F9D1AA861A50D182005293DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9D1AA451A50A178005293DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9D1AA671A50A2A8005293DE;
+			remoteInfo = KKMethodCallLogger;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F9D1AA4D1A50A178005293DE /* KKMethodCallLoggerPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKMethodCallLoggerPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +45,17 @@
 		F9D1AA571A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = KKMethodCallLoggerPlugin.xcscheme; path = KKMethodCallLoggerPlugin.xcodeproj/xcshareddata/xcschemes/KKMethodCallLoggerPlugin.xcscheme; sourceTree = SOURCE_ROOT; };
 		F9D1AA591A50A178005293DE /* KKMethodCallLoggerPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMethodCallLoggerPlugin.h; sourceTree = "<group>"; };
 		F9D1AA5A1A50A178005293DE /* KKMethodCallLoggerPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLoggerPlugin.m; sourceTree = "<group>"; };
+		F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKKMethodCallLogger.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9D1AA6A1A50A2A8005293DE /* KKMethodCallLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMethodCallLogger.h; sourceTree = "<group>"; };
+		F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLogger.m; sourceTree = "<group>"; };
+		F9D1AA721A50A2A8005293DE /* KKMethodCallLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKMethodCallLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9D1AA781A50A2A8005293DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9D1AA7F1A50A331005293DE /* KKMethodCallLoggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLoggerTests.m; sourceTree = "<group>"; };
+		F9DF0E4C1A53B6E9006FC617 /* KKLLDBCommandInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLLDBCommandInjector.h; sourceTree = "<group>"; };
+		F9DF0E4D1A53B6E9006FC617 /* KKLLDBCommandInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLLDBCommandInjector.m; sourceTree = "<group>"; };
+		F9DF0E521A53BA7A006FC617 /* KKXcodeRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKXcodeRuntime.h; sourceTree = "<group>"; };
+		F9DF0E531A53C970006FC617 /* KKSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSwizzler.h; sourceTree = "<group>"; };
+		F9DF0E541A53C970006FC617 /* KKSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSwizzler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +68,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9D1AA651A50A2A8005293DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D1AA6F1A50A2A8005293DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D1AA731A50A2A8005293DE /* libKKMethodCallLogger.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -40,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				F9D1AA541A50A178005293DE /* KKMethodCallLoggerPlugin */,
+				F9D1AA691A50A2A8005293DE /* KKMethodCallLogger */,
+				F9D1AA761A50A2A8005293DE /* KKMethodCallLoggerTests */,
 				F9D1AA4F1A50A178005293DE /* Frameworks */,
 				F9D1AA4E1A50A178005293DE /* Products */,
 			);
@@ -49,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				F9D1AA4D1A50A178005293DE /* KKMethodCallLoggerPlugin.xcplugin */,
+				F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */,
+				F9D1AA721A50A2A8005293DE /* KKMethodCallLoggerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +121,11 @@
 			children = (
 				F9D1AA591A50A178005293DE /* KKMethodCallLoggerPlugin.h */,
 				F9D1AA5A1A50A178005293DE /* KKMethodCallLoggerPlugin.m */,
+				F9DF0E4C1A53B6E9006FC617 /* KKLLDBCommandInjector.h */,
+				F9DF0E4D1A53B6E9006FC617 /* KKLLDBCommandInjector.m */,
+				F9DF0E521A53BA7A006FC617 /* KKXcodeRuntime.h */,
+				F9DF0E531A53C970006FC617 /* KKSwizzler.h */,
+				F9DF0E541A53C970006FC617 /* KKSwizzler.m */,
 				F9D1AA551A50A178005293DE /* Supporting Files */,
 			);
 			path = KKMethodCallLoggerPlugin;
@@ -81,7 +140,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9D1AA691A50A2A8005293DE /* KKMethodCallLogger */ = {
+			isa = PBXGroup;
+			children = (
+				F9D1AA6A1A50A2A8005293DE /* KKMethodCallLogger.h */,
+				F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */,
+			);
+			path = KKMethodCallLogger;
+			sourceTree = "<group>";
+		};
+		F9D1AA761A50A2A8005293DE /* KKMethodCallLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9D1AA7F1A50A331005293DE /* KKMethodCallLoggerTests.m */,
+				F9D1AA771A50A2A8005293DE /* Supporting Files */,
+			);
+			path = KKMethodCallLoggerTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		F9D1AA771A50A2A8005293DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9D1AA781A50A2A8005293DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F9D1AA661A50A2A8005293DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D1AA6B1A50A2A8005293DE /* KKMethodCallLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		F9D1AA4C1A50A178005293DE /* KKMethodCallLoggerPlugin */ = {
@@ -95,11 +191,47 @@
 			buildRules = (
 			);
 			dependencies = (
+				F9D1AA871A50D182005293DE /* PBXTargetDependency */,
 			);
 			name = KKMethodCallLoggerPlugin;
 			productName = KKMethodCallLoggerPlugin;
 			productReference = F9D1AA4D1A50A178005293DE /* KKMethodCallLoggerPlugin.xcplugin */;
 			productType = "com.apple.product-type.bundle";
+		};
+		F9D1AA671A50A2A8005293DE /* KKMethodCallLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9D1AA791A50A2A8005293DE /* Build configuration list for PBXNativeTarget "KKMethodCallLogger" */;
+			buildPhases = (
+				F9D1AA641A50A2A8005293DE /* Sources */,
+				F9D1AA651A50A2A8005293DE /* Frameworks */,
+				F9D1AA661A50A2A8005293DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKMethodCallLogger;
+			productName = KKMethodCallLogger;
+			productReference = F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		F9D1AA711A50A2A8005293DE /* KKMethodCallLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9D1AA7C1A50A2A8005293DE /* Build configuration list for PBXNativeTarget "KKMethodCallLoggerTests" */;
+			buildPhases = (
+				F9D1AA6E1A50A2A8005293DE /* Sources */,
+				F9D1AA6F1A50A2A8005293DE /* Frameworks */,
+				F9D1AA701A50A2A8005293DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9D1AA751A50A2A8005293DE /* PBXTargetDependency */,
+			);
+			name = KKMethodCallLoggerTests;
+			productName = KKMethodCallLoggerTests;
+			productReference = F9D1AA721A50A2A8005293DE /* KKMethodCallLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -111,6 +243,12 @@
 				ORGANIZATIONNAME = "Karol Kozub";
 				TargetAttributes = {
 					F9D1AA4C1A50A178005293DE = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					F9D1AA671A50A2A8005293DE = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					F9D1AA711A50A2A8005293DE = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -128,6 +266,8 @@
 			projectRoot = "";
 			targets = (
 				F9D1AA4C1A50A178005293DE /* KKMethodCallLoggerPlugin */,
+				F9D1AA671A50A2A8005293DE /* KKMethodCallLogger */,
+				F9D1AA711A50A2A8005293DE /* KKMethodCallLoggerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -137,7 +277,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D1AA851A50D17B005293DE /* libKKMethodCallLogger.dylib in Resources */,
 				F9D1AA581A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D1AA701A50A2A8005293DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,11 +296,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DF0E4E1A53B6E9006FC617 /* KKLLDBCommandInjector.m in Sources */,
 				F9D1AA5B1A50A178005293DE /* KKMethodCallLoggerPlugin.m in Sources */,
+				F9DF0E551A53C970006FC617 /* KKSwizzler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D1AA641A50A2A8005293DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D1AA6D1A50A2A8005293DE /* KKMethodCallLogger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D1AA6E1A50A2A8005293DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D1AA801A50A331005293DE /* KKMethodCallLoggerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9D1AA751A50A2A8005293DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9D1AA671A50A2A8005293DE /* KKMethodCallLogger */;
+			targetProxy = F9D1AA741A50A2A8005293DE /* PBXContainerItemProxy */;
+		};
+		F9D1AA871A50D182005293DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9D1AA671A50A2A8005293DE /* KKMethodCallLogger */;
+			targetProxy = F9D1AA861A50D182005293DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F9D1AA5C1A50A178005293DE /* Debug */ = {
@@ -233,6 +412,10 @@
 				INFOPLIST_FILE = KKMethodCallLoggerPlugin/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -247,8 +430,78 @@
 				INFOPLIST_FILE = KKMethodCallLoggerPlugin/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+		F9D1AA7A1A50A2A8005293DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F9D1AA7B1A50A2A8005293DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F9D1AA7D1A50A2A8005293DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KKMethodCallLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F9D1AA7E1A50A2A8005293DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KKMethodCallLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -271,6 +524,25 @@
 				F9D1AA601A50A178005293DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9D1AA791A50A2A8005293DE /* Build configuration list for PBXNativeTarget "KKMethodCallLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9D1AA7A1A50A2A8005293DE /* Debug */,
+				F9D1AA7B1A50A2A8005293DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9D1AA7C1A50A2A8005293DE /* Build configuration list for PBXNativeTarget "KKMethodCallLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9D1AA7D1A50A2A8005293DE /* Debug */,
+				F9D1AA7E1A50A2A8005293DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

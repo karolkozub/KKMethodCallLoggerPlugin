@@ -8,9 +8,7 @@
 
 #import <AppKit/AppKit.h>
 
+
 @interface KKMethodCallLoggerPlugin : NSObject
 
-+ (instancetype)sharedPlugin;
-
-@property (nonatomic, strong, readonly) NSBundle* bundle;
 @end

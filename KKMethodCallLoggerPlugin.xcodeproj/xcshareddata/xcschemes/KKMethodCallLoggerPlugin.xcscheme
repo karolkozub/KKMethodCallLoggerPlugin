@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "890A4B3E171F031300AFE577"
+               BlueprintIdentifier = "F9D1AA4C1A50A178005293DE"
                BuildableName = "KKMethodCallLoggerPlugin.xcplugin"
                BlueprintName = "KKMethodCallLoggerPlugin"
                ReferencedContainer = "container:KKMethodCallLoggerPlugin.xcodeproj">
@@ -42,7 +42,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F9D1AA711A50A2A8005293DE"
+               BuildableName = "KKMethodCallLoggerTests.xctest"
+               BlueprintName = "KKMethodCallLoggerTests"
+               ReferencedContainer = "container:KKMethodCallLoggerPlugin.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F9D1AA4C1A50A178005293DE"
+            BuildableName = "KKMethodCallLoggerPlugin.xcplugin"
+            BlueprintName = "KKMethodCallLoggerPlugin"
+            ReferencedContainer = "container:KKMethodCallLoggerPlugin.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -61,7 +80,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "890A4B3E171F031300AFE577"
+            BlueprintIdentifier = "F9D1AA4C1A50A178005293DE"
             BuildableName = "KKMethodCallLoggerPlugin.xcplugin"
             BlueprintName = "KKMethodCallLoggerPlugin"
             ReferencedContainer = "container:KKMethodCallLoggerPlugin.xcodeproj">
@@ -76,6 +95,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F9D1AA4C1A50A178005293DE"
+            BuildableName = "KKMethodCallLoggerPlugin.xcplugin"
+            BlueprintName = "KKMethodCallLoggerPlugin"
+            ReferencedContainer = "container:KKMethodCallLoggerPlugin.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
