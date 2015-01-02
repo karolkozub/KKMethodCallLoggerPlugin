@@ -68,10 +68,10 @@
                                                @"'s/(.*)/expr [KKMethodCallLogger listLoggedObjects];/' "
                                                @"-h 'List logged objects.' \n"];
       [[session launcher] _executeLLDBCommands:@"command regex mcl-methods "
-                                               @"'s/(.+)/expr [KKMethodCallLogger listMethodsForObject:(id)%1];/' "
+                                               @"'s/(.+)/expr [KKMethodCallLogger listMethodsForClass:(Class)[%1 class]];/' "
                                                @"-h 'List methods for the object.' \n"];
       [[session launcher] _executeLLDBCommands:@"command regex mcl-methods-all "
-                                               @"'s/(.+)/expr [KKMethodCallLogger listMethodsForObject:(id)%1 includingAncestors:YES];/' "
+                                               @"'s/(.+)/expr [KKMethodCallLogger listMethodsForClass:(Class)[%1 class] includingAncestors:YES];/' "
                                                @"-h 'List methods for the object including ancestors.' \n"];
       [[session launcher] _executeLLDBCommands:@"command regex mcl-help "
                                                @"'s/(.*)/expr [KKMethodCallLogger showHelpMessage];/' "

@@ -15,8 +15,8 @@
 + (void)startLoggingMethodCallsForObject:(id)object withName:(NSString *)name;
 + (void)stopLoggingMethodCallsForObject:(id)object;
 + (void)stopLoggingMethodCallsForAllObjects;
-+ (void)listMethodsForObject:(id)object;
-+ (void)listMethodsForObject:(id)object includingAncestors:(BOOL)includingAncestors;
++ (void)listMethodsForClass:(Class)klass;
++ (void)listMethodsForClass:(Class)klass includingAncestors:(BOOL)includingAncestors;
 + (void)listLoggedObjects;
 
 + (NSArray *)loggedObjects;

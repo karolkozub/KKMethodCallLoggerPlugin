@@ -80,19 +80,19 @@ static void (*sLogFunction)(NSString *, ...) = KKDefaultLog;
   }
 }
 
-+ (void)listMethodsForObject:(id)object
++ (void)listMethodsForClass:(Class)klass
 {
-  [self listMethodsForObject:object includingAncestors:NO];
+  [self listMethodsForClass:klass includingAncestors:NO];
 }
 
-+ (void)listMethodsForObject:(id)object includingAncestors:(BOOL)includingAncestors
++ (void)listMethodsForClass:(Class)klass includingAncestors:(BOOL)includingAncestors
 {
   NSMutableString *methodListString = [NSMutableString string];
 
-  for (Class class = [object class]; class; class = includingAncestors ? [class superclass] : nil) {
-    [methodListString appendFormat:@"%@\n", NSStringFromClass(class)];
+  for (; klass; klass = includingAncestors ? [klass superclass] : nil) {
+    [methodListString appendFormat:@"%@\n", NSStringFromClass(klass)];
     unsigned int methodCount;
-    Method *methods = class_copyMethodList(class, &methodCount);
+    Method *methods = class_copyMethodList(klass, &methodCount);
     NSMutableArray *methodNames = [NSMutableArray array];
 
     for (unsigned int i = 0; i < methodCount; i++) {
