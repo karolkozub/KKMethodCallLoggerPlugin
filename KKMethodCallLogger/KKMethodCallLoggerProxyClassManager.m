@@ -92,7 +92,7 @@
 {
   NSString *objectName   = KKAssociatedName(self) ?: NSStringFromClass([self class]);
   NSString *selectorName = NSStringFromSelector(invocation.selector);
-  Class originalClass = KKAssociatedOriginalClass(self);
+  Class originalClass = [self class];
   Class proxyClass    = KKAssociatedProxyClass(self);
 
   KKLog(@"-[%@ %@]", objectName, selectorName);
@@ -104,7 +104,7 @@
 
 - (void)superproxy_forwardInvocation:(NSInvocation *)invocation
 {
-  Class originalClass = KKAssociatedOriginalClass(self);
+  Class originalClass = [self class];
   Class proxyClass    = KKAssociatedProxyClass(self);
   Class superclass    = class_getSuperclass(originalClass);
   Method superMethod = class_getInstanceMethod(superclass, _cmd);

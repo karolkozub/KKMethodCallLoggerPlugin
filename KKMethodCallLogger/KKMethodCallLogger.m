@@ -35,7 +35,6 @@
   Class proxyClass = [KKMethodCallLoggerProxyClassManager proxyClassForClass:[object class]];
 
   if (KKAssociatedProxyClass(object) != proxyClass) {
-    KKSetAssociatedOriginalClass(object, [object class]);
     KKSetAssociatedProxyClass(object, proxyClass);
     object_setClass(object, proxyClass);
 
@@ -47,7 +46,7 @@
 
 + (void)stopLoggingMethodCallsForObject:(id)object
 {
-  Class objectClass = KKAssociatedOriginalClass(object);
+  Class objectClass = [object class];
   Class proxyClass  = [KKMethodCallLoggerProxyClassManager proxyClassForClass:objectClass];
 
   if (KKAssociatedProxyClass(object) == proxyClass) {
