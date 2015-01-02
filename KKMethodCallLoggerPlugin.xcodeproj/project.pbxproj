@@ -12,7 +12,7 @@
 		F9D1AA581A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = F9D1AA571A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme */; };
 		F9D1AA5B1A50A178005293DE /* KKMethodCallLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA5A1A50A178005293DE /* KKMethodCallLoggerPlugin.m */; };
 		F9D1AA6B1A50A2A8005293DE /* KKMethodCallLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D1AA6A1A50A2A8005293DE /* KKMethodCallLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9D1AA6D1A50A2A8005293DE /* KKMethodCallLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F9D1AA6D1A50A2A8005293DE /* KKMethodCallLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */; };
 		F9D1AA731A50A2A8005293DE /* libKKMethodCallLogger.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */; };
 		F9D1AA801A50A331005293DE /* KKMethodCallLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D1AA7F1A50A331005293DE /* KKMethodCallLoggerTests.m */; };
 		F9D1AA851A50D17B005293DE /* libKKMethodCallLogger.dylib in Resources */ = {isa = PBXBuildFile; fileRef = F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */; };

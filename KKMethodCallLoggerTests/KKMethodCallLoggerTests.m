@@ -88,24 +88,6 @@ static NSMutableString *sLogString;
   XCTAssertEqualObjects(sLogString, @"-[self.object count]\n");
 }
 
-- (void)testDeallocingLoggedObjects
-{
-  __weak id weakValue;
-
-  @autoreleasepool {
-    {
-      id value = [NSObject new];
-      weakValue = value;
-      self.object = @[value];
-    }
-
-    [KKMethodCallLogger startLoggingMethodCallsForObject:self.object];
-    self.object = nil;
-  }
-
-  XCTAssertNil(weakValue);
-}
-
 - (void)testChangingObjectName
 {
   self.object = [NSMutableArray array];
@@ -196,7 +178,7 @@ static NSMutableString *sLogString;
   [KKMethodCallLogger startLoggingMethodCallsForObject:[NSArray class]];
 
   XCTAssertEqualObjects([KKMethodCallLogger loggedObjects], @[]);
-  XCTAssertEqualObjects(sLogString, @"KKMethodCallLogger doesn't support logging class method calls.\n");
+  XCTAssertEqualObjects(sLogString, @"KKMethodCallLogger doesn't currently support logging class method calls.\n");
 }
 
 - (void)testNSObjectProtocolMethods
@@ -228,12 +210,24 @@ static NSMutableString *sLogString;
   XCTAssertEqualObjects([self.object superclass], objectSuperclass);
 }
 
-- (void)testIgnoringObjectsWithInfiniteRetainCount
+- (void)testNotLoggingNilObject
 {
-  [KKMethodCallLogger startLoggingMethodCallsForObject:@"test"];
+  self.object = nil;
+
+  [KKMethodCallLogger startLoggingMethodCallsForObject:self.object];
 
   XCTAssertEqualObjects([KKMethodCallLogger loggedObjects], @[]);
-  XCTAssertEqualObjects(sLogString, @"KKMethodCallLogger doesn't support logging objects with infinite retain count.\n");
+  XCTAssertEqualObjects(sLogString, @"KKMethodCallLogger cannot log calls for a nil object.\n");
+}
+
+- (void)testImmortalObjectsNotGettingReleased
+{
+  __weak id weakString = @"test";
+
+  [KKMethodCallLogger startLoggingMethodCallsForObject:weakString];
+  [KKMethodCallLogger stopLoggingMethodCallsForObject:weakString];
+
+  XCTAssertNotNil(weakString);
 }
 
 #pragma mark - Log Function
