@@ -142,7 +142,7 @@
   static dispatch_once_t onceToken;
 
   dispatch_once(&onceToken, ^{
-    basicInstanceSelectorNames = [NSSet setWithArray:@[@"isEqual:", @"hash", @"self", @"isKindOfClass:", @"isMemberOfClass:", @"respondsToSelector:", @"conformsToProtocol:", @"methodSignatureForSelector:", @"description", @"debugDescription", @"performSelector:", @"doesNotRecognizeSelector:", @"performSelector:withObject:", @"performSelector:withObject:withObject:", @"isProxy", @"retain", @"release", @"autorelease", @"retainCount", @"zone", @"dealloc", @"finalize"]];
+    basicInstanceSelectorNames = [NSSet setWithArray:@[@"isEqual:", @"hash", @"self", @"isKindOfClass:", @"isMemberOfClass:", @"respondsToSelector:", @"conformsToProtocol:", @"methodSignatureForSelector:", @"description", @"debugDescription", @"performSelector:", @"doesNotRecognizeSelector:", @"performSelector:withObject:", @"performSelector:withObject:withObject:", @"isProxy", @"retain", @"release", @"autorelease", @"retainCount", @"zone", @"dealloc", @"finalize", @"_tryRetain", @"_isDeallocating", @"allowsWeakReference", @"retainWeakReference"]];
   });
 
   return basicInstanceSelectorNames;
