@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "KKMethodCallLogger.h"
 #import <objc/runtime.h>
+#import "KKTestProxy.h"
 
 
 static NSMutableString *sLogString;
@@ -210,7 +211,7 @@ static NSMutableString *sLogString;
   XCTAssertEqualObjects([self.object superclass], objectSuperclass);
 }
 
-- (void)testNotLoggingNilObject
+- (void)testIgnoringNilObjects
 {
   self.object = nil;
 
@@ -244,6 +245,15 @@ static NSMutableString *sLogString;
   [array removeObject:@(2)];
 
   XCTAssertEqualObjects(array, (@[@(1), @(3)]));
+}
+
+- (void)testIgnoringProxyObjects
+{
+  self.object = [KKTestProxy alloc];
+
+  [KKMethodCallLogger startLoggingMethodCallsForObject:self.object];
+
+  XCTAssertEqualObjects(sLogString, @"KKMethodCallLogger doesn't currently support logging method calls for proxy objects.\n");
 }
 
 #pragma mark - Log Function

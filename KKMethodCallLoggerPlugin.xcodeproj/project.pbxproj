@@ -14,6 +14,7 @@
 		F9C2BC2F1A565A68009D8E0F /* KKLogFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C2BC2D1A565A68009D8E0F /* KKLogFunction.h */; };
 		F9C2BC301A565A68009D8E0F /* KKLogFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2BC2E1A565A68009D8E0F /* KKLogFunction.m */; };
 		F9C2BC331A56610E009D8E0F /* NSInvocation+PrivateAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C2BC311A56610E009D8E0F /* NSInvocation+PrivateAPI.h */; };
+		F9CFFA901A56D5660023F0EF /* KKTestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFA8F1A56D5660023F0EF /* KKTestProxy.m */; };
 		F9D1AA511A50A178005293DE /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA501A50A178005293DE /* AppKit.framework */; };
 		F9D1AA531A50A178005293DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA521A50A178005293DE /* Foundation.framework */; };
 		F9D1AA581A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = F9D1AA571A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme */; };
@@ -52,6 +53,8 @@
 		F9C2BC2D1A565A68009D8E0F /* KKLogFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLogFunction.h; sourceTree = "<group>"; };
 		F9C2BC2E1A565A68009D8E0F /* KKLogFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLogFunction.m; sourceTree = "<group>"; };
 		F9C2BC311A56610E009D8E0F /* NSInvocation+PrivateAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+PrivateAPI.h"; sourceTree = "<group>"; };
+		F9CFFA8E1A56D5660023F0EF /* KKTestProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTestProxy.h; sourceTree = "<group>"; };
+		F9CFFA8F1A56D5660023F0EF /* KKTestProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTestProxy.m; sourceTree = "<group>"; };
 		F9D1AA4D1A50A178005293DE /* KKMethodCallLoggerPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKMethodCallLoggerPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D1AA501A50A178005293DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		F9D1AA521A50A178005293DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -174,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				F9D1AA7F1A50A331005293DE /* KKMethodCallLoggerTests.m */,
+				F9CFFA8E1A56D5660023F0EF /* KKTestProxy.h */,
+				F9CFFA8F1A56D5660023F0EF /* KKTestProxy.m */,
 				F9D1AA771A50A2A8005293DE /* Supporting Files */,
 			);
 			path = KKMethodCallLoggerTests;
@@ -342,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9CFFA901A56D5660023F0EF /* KKTestProxy.m in Sources */,
 				F9D1AA801A50A331005293DE /* KKMethodCallLoggerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

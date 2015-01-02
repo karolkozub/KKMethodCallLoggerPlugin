@@ -32,6 +32,11 @@
     return;
   }
 
+  if ([object isProxy]) {
+    KKLog(@"KKMethodCallLogger doesn't currently support logging method calls for proxy objects.");
+    return;
+  }
+
   Class proxyClass = [KKMethodCallLoggerProxyClassManager proxyClassForClass:[object class]];
 
   if (KKAssociatedProxyClass(object) != proxyClass) {
