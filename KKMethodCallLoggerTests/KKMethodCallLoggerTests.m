@@ -230,6 +230,22 @@ static NSMutableString *sLogString;
   XCTAssertNotNil(weakString);
 }
 
+- (void)testLoggedObjectsWorkingCorrectly
+{
+  NSMutableArray *array = [NSMutableArray array];
+
+  [KKMethodCallLogger startLoggingMethodCallsForObject:array];
+
+  [array addObject:@(1)];
+  [array addObjectsFromArray:@[@(2), @(3)]];
+
+  [KKMethodCallLogger stopLoggingMethodCallsForObject:array];
+
+  [array removeObject:@(2)];
+
+  XCTAssertEqualObjects(array, (@[@(1), @(3)]));
+}
+
 #pragma mark - Log Function
 
 void LogFunction(NSString *format, ...)
