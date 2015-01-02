@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9C2BC271A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C2BC251A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.h */; };
+		F9C2BC281A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2BC261A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.m */; };
+		F9C2BC2B1A565A0F009D8E0F /* KKAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C2BC291A565A0F009D8E0F /* KKAssociatedObjects.h */; };
+		F9C2BC2C1A565A0F009D8E0F /* KKAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2BC2A1A565A0F009D8E0F /* KKAssociatedObjects.m */; };
+		F9C2BC2F1A565A68009D8E0F /* KKLogFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C2BC2D1A565A68009D8E0F /* KKLogFunction.h */; };
+		F9C2BC301A565A68009D8E0F /* KKLogFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2BC2E1A565A68009D8E0F /* KKLogFunction.m */; };
+		F9C2BC331A56610E009D8E0F /* NSInvocation+PrivateAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C2BC311A56610E009D8E0F /* NSInvocation+PrivateAPI.h */; };
 		F9D1AA511A50A178005293DE /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA501A50A178005293DE /* AppKit.framework */; };
 		F9D1AA531A50A178005293DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D1AA521A50A178005293DE /* Foundation.framework */; };
 		F9D1AA581A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = F9D1AA571A50A178005293DE /* KKMethodCallLoggerPlugin.xcscheme */; };
@@ -38,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F9C2BC251A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMethodCallLoggerProxyClassManager.h; sourceTree = "<group>"; };
+		F9C2BC261A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLoggerProxyClassManager.m; sourceTree = "<group>"; };
+		F9C2BC291A565A0F009D8E0F /* KKAssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = KKAssociatedObjects.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F9C2BC2A1A565A0F009D8E0F /* KKAssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = KKAssociatedObjects.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F9C2BC2D1A565A68009D8E0F /* KKLogFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLogFunction.h; sourceTree = "<group>"; };
+		F9C2BC2E1A565A68009D8E0F /* KKLogFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLogFunction.m; sourceTree = "<group>"; };
+		F9C2BC311A56610E009D8E0F /* NSInvocation+PrivateAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+PrivateAPI.h"; sourceTree = "<group>"; };
 		F9D1AA4D1A50A178005293DE /* KKMethodCallLoggerPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKMethodCallLoggerPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D1AA501A50A178005293DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		F9D1AA521A50A178005293DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -47,7 +61,7 @@
 		F9D1AA5A1A50A178005293DE /* KKMethodCallLoggerPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLoggerPlugin.m; sourceTree = "<group>"; };
 		F9D1AA681A50A2A8005293DE /* libKKMethodCallLogger.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKKMethodCallLogger.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D1AA6A1A50A2A8005293DE /* KKMethodCallLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMethodCallLogger.h; sourceTree = "<group>"; };
-		F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLogger.m; sourceTree = "<group>"; };
+		F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = KKMethodCallLogger.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F9D1AA721A50A2A8005293DE /* KKMethodCallLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKMethodCallLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D1AA781A50A2A8005293DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9D1AA7F1A50A331005293DE /* KKMethodCallLoggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMethodCallLoggerTests.m; sourceTree = "<group>"; };
@@ -145,6 +159,13 @@
 			children = (
 				F9D1AA6A1A50A2A8005293DE /* KKMethodCallLogger.h */,
 				F9D1AA6C1A50A2A8005293DE /* KKMethodCallLogger.m */,
+				F9C2BC251A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.h */,
+				F9C2BC261A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.m */,
+				F9C2BC291A565A0F009D8E0F /* KKAssociatedObjects.h */,
+				F9C2BC2A1A565A0F009D8E0F /* KKAssociatedObjects.m */,
+				F9C2BC2D1A565A68009D8E0F /* KKLogFunction.h */,
+				F9C2BC2E1A565A68009D8E0F /* KKLogFunction.m */,
+				F9C2BC311A56610E009D8E0F /* NSInvocation+PrivateAPI.h */,
 			);
 			path = KKMethodCallLogger;
 			sourceTree = "<group>";
@@ -173,7 +194,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C2BC331A56610E009D8E0F /* NSInvocation+PrivateAPI.h in Headers */,
 				F9D1AA6B1A50A2A8005293DE /* KKMethodCallLogger.h in Headers */,
+				F9C2BC2B1A565A0F009D8E0F /* KKAssociatedObjects.h in Headers */,
+				F9C2BC271A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.h in Headers */,
+				F9C2BC2F1A565A68009D8E0F /* KKLogFunction.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C2BC301A565A68009D8E0F /* KKLogFunction.m in Sources */,
+				F9C2BC281A5658BE009D8E0F /* KKMethodCallLoggerProxyClassManager.m in Sources */,
 				F9D1AA6D1A50A2A8005293DE /* KKMethodCallLogger.m in Sources */,
+				F9C2BC2C1A565A0F009D8E0F /* KKAssociatedObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

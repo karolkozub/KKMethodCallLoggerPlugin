@@ -22,7 +22,7 @@
 + (NSArray *)loggedObjects;
 
 + (void)setLogFunction:(void (*)(NSString *, ...))logFunction;
-+ (void)setDefaultLogFunction;
++ (void)setLogFunctionToDefault;
 + (void (*)(NSString *, ...))logFunction;
 
 @end

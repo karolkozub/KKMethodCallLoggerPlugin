@@ -35,8 +35,8 @@ static NSMutableString *sLogString;
 - (void)tearDown
 {
   self.object = nil;
-  [KKMethodCallLogger setDefaultLogFunction];
   [KKMethodCallLogger stopLoggingMethodCallsForAllObjects];
+  [KKMethodCallLogger setLogFunctionToDefault];
   sLogString = nil;
 
   [super tearDown];
