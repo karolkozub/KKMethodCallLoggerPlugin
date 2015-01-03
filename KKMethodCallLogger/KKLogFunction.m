@@ -28,8 +28,7 @@ void KKDefaultLog(NSString *format, ...)
   va_list arguments;
   va_start(arguments, format);
 
-  NSString *message = [[NSString alloc] initWithFormat:format arguments:arguments];
-  printf("%s\n", [message cStringUsingEncoding:NSUTF8StringEncoding]);
+  puts([[[NSString alloc] initWithFormat:format arguments:arguments] UTF8String]);
 
   va_end(arguments);
 }
