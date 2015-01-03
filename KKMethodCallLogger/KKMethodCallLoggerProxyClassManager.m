@@ -93,13 +93,12 @@
   NSString *objectName   = KKAssociatedName(self) ?: NSStringFromClass([self class]);
   NSString *selectorName = NSStringFromSelector(invocation.selector);
   Class originalClass = [self class];
-  Class proxyClass    = KKAssociatedProxyClass(self);
+  Method method = class_getInstanceMethod(originalClass, invocation.selector);
+  IMP imp = method_getImplementation(method);
 
   KKLog(@"-[%@ %@]", objectName, selectorName);
 
-  object_setClass(self, originalClass);
-  [invocation invokeWithTarget:self];
-  object_setClass(self, proxyClass);
+  [invocation invokeUsingIMP:imp];
 }
 
 - (void)superproxy_forwardInvocation:(NSInvocation *)invocation
@@ -107,7 +106,7 @@
   Class originalClass = [self class];
   Class proxyClass    = KKAssociatedProxyClass(self);
   Class superclass    = class_getSuperclass(originalClass);
-  Method superMethod = class_getInstanceMethod(superclass, _cmd);
+  Method superMethod = class_getInstanceMethod(superclass, invocation.selector);
   IMP superImp = method_getImplementation(superMethod);
 
   object_setClass(self, originalClass);

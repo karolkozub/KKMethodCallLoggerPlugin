@@ -49,12 +49,12 @@ static NSMutableString *sLogString;
   [KKMethodCallLogger startLoggingMethodCallsForObject:self.object];
 
   [self.object count];
-  [self.object addObject:@(1)];
-  [self.object removeObject:@(1) inRange:NSMakeRange(0, 1)];
+  [self.object insertObject:@(1) atIndex:0];
+  [self.object removeAllObjects];
 
   XCTAssertEqualObjects(sLogString, @"-[__NSArrayM count]\n"
-                                    @"-[__NSArrayM addObject:]\n"
-                                    @"-[__NSArrayM removeObject:inRange:]\n");
+                                    @"-[__NSArrayM insertObject:atIndex:]\n"
+                                    @"-[__NSArrayM removeAllObjects]\n");
 }
 
 - (void)testForwardingClassQueries
@@ -97,13 +97,13 @@ static NSMutableString *sLogString;
   [self.object count];
   [KKMethodCallLogger startLoggingMethodCallsForObject:self.object withName:@"object"];
 
-  [self.object addObject:@(1)];
+  [self.object insertObject:@(1) atIndex:0];
   [KKMethodCallLogger startLoggingMethodCallsForObject:self.object withName:@"self.object"];
 
   [self.object removeAllObjects];
 
   XCTAssertEqualObjects(sLogString, @"-[__NSArrayM count]\n"
-                                    @"-[object addObject:]\n"
+                                    @"-[object insertObject:atIndex:]\n"
                                     @"-[self.object removeAllObjects]\n");
 }
 
