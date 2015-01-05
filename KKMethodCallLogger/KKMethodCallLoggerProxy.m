@@ -36,7 +36,7 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
     SEL fromSelector = NSSelectorFromString(fromSelectorName);
     SEL toSelector = NSSelectorFromString(toSelectorName);
 
-    [self copyMethodFromClass:self toClass:proxyClass withFromSelector:fromSelector toSelector:toSelector];
+    KKCopyMethod(self, proxyClass, fromSelector, toSelector);
   }
 
   for (NSString *toSelectorName in [self proxyClassSelectorNames]) {
@@ -44,13 +44,13 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
     SEL fromSelector = NSSelectorFromString(fromSelectorName);
     SEL toSelector = NSSelectorFromString(toSelectorName);
 
-    [self copyMethodFromClass:object_getClass(self) toClass:object_getClass(proxyClass) withFromSelector:fromSelector toSelector:toSelector];
+    KKCopyMethod(object_getClass(self), object_getClass(proxyClass), fromSelector, toSelector);
   }
 
   for (NSString *selectorName in [self instanceSelectorNamesToCopyFromClass:klass]) {
     SEL selector = NSSelectorFromString(selectorName);
 
-    [self copyMethodFromClass:klass toClass:proxyClass withFromSelector:selector toSelector:selector];
+    KKCopyMethod(klass, proxyClass, selector, selector);
   }
 
   objc_registerClassPair(proxyClass);
@@ -81,6 +81,22 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
   Class klass = NSClassFromString([[NSStringFromClass(object_getClass(self)) componentsSeparatedByString:kProxyClassPrefix] lastObject]);
 
   return class_getSuperclass(klass);
+}
+
+- (void)proxy_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context
+{
+  NSString *proxyClassName = NSStringFromClass(object_getClass(self));
+  Class klass = NSClassFromString([[proxyClassName componentsSeparatedByString:kProxyClassPrefix] lastObject]);
+
+  void (*addObserver)(id, SEL, ...) =  (void (*)(id, SEL, ...))[klass instanceMethodForSelector:_cmd];
+
+  addObserver(self, _cmd, observer, keyPath, options, context);
+
+  Class kvoClass = NSClassFromString([@"NSKVONotifying_" stringByAppendingString:proxyClassName]);
+
+  if (kvoClass != Nil && ![kvoClass instancesRespondToSelector:@selector(proxy_class)]) {
+    KKSwizzleMethod([KKMethodCallLoggerProxy class], kvoClass, @selector(proxy_class), @selector(class));
+  }
 }
 
 + (void)proxy_initialize
@@ -116,7 +132,7 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
 
 + (NSSet *)proxyInstanceSelectorNames
 {
-  return [NSSet setWithArray:@[@"forwardInvocation:", @"class", @"superclass"]];
+  return [NSSet setWithArray:@[@"forwardInvocation:", @"class", @"superclass", @"addObserver:forKeyPath:options:context:"]];
 }
 
 + (NSSet *)proxyClassSelectorNames
@@ -128,7 +144,7 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
 {
   NSMutableSet *results = [NSMutableSet set];
 
-  for (; ![self classIsBaseClass:klass]; klass = class_getSuperclass(klass)) {
+  for (; !KKIsBaseClass(klass); klass = class_getSuperclass(klass)) {
     [results unionSet:[self instanceSelectorNamesDirectlyInClass:klass]];
   }
 
@@ -152,7 +168,21 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
 
 #pragma mark - Utility methods
 
-+ (void)copyMethodFromClass:(Class)fromClass toClass:(Class)toClass withFromSelector:(SEL)fromSelector toSelector:(SEL)toSelector
+static void KKSwizzleMethod(Class fromClass, Class toClass, SEL fromSelector, SEL toSelector)
+{
+  KKCopyMethod(fromClass, toClass, fromSelector, fromSelector);
+  KKExchangeMethods(toClass, fromSelector, toSelector);
+}
+
+static void KKExchangeMethods(Class klass, SEL firstSelector, SEL secondSelector)
+{
+  Method firstMethod = class_getInstanceMethod(klass, firstSelector);
+  Method secondMethod = class_getInstanceMethod(klass, secondSelector);
+
+  method_exchangeImplementations(firstMethod, secondMethod);
+}
+
+static void KKCopyMethod(Class fromClass, Class toClass, SEL fromSelector, SEL toSelector)
 {
   Method method = class_getInstanceMethod(fromClass, fromSelector);
   IMP imp = method_getImplementation(method);
@@ -161,7 +191,7 @@ static NSString * const kProxyClassPrefix = @"KKMethodCallLoggerProxy_";
   class_addMethod(toClass, toSelector, imp, typeEncoding);
 }
 
-+ (BOOL)classIsBaseClass:(Class)klass
+static BOOL KKIsBaseClass(Class klass)
 {
   return klass == [NSObject class] || klass == [NSProxy class] || klass == nil;
 }
