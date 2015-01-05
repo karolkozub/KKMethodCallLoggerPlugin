@@ -7,7 +7,7 @@
 //
 
 #import "KKMethodCallLogger.h"
-#import "KKMethodCallLoggerProxyClassManager.h"
+#import "KKMethodCallLoggerProxy.h"
 #import "KKAssociatedObjects.h"
 #import "KKLogFunction.h"
 #import <objc/runtime.h>
@@ -37,7 +37,7 @@
     return;
   }
 
-  Class proxyClass = [KKMethodCallLoggerProxyClassManager proxyClassForClass:[object class]];
+  Class proxyClass = [KKMethodCallLoggerProxy proxyClassForClass:[object class]];
 
   if (KKAssociatedProxyClass(object) != proxyClass) {
     KKSetAssociatedProxyClass(object, proxyClass);
@@ -52,7 +52,7 @@
 + (void)stopLoggingMethodCallsForObject:(id)object
 {
   Class objectClass = [object class];
-  Class proxyClass  = [KKMethodCallLoggerProxyClassManager proxyClassForClass:objectClass];
+  Class proxyClass  = [KKMethodCallLoggerProxy proxyClassForClass:objectClass];
 
   if (KKAssociatedProxyClass(object) == proxyClass) {
     object_setClass(object, objectClass);
